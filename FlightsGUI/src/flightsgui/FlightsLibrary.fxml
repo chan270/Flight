@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="BorderPane" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightsgui.FlightsLibraryController">
+    <stylesheets>
+        <URL value="@flightslibrary.css"/>
+    </stylesheets>
+    <left>
+        <VBox maxWidth="225">
+            <children>
+                <VBox>
+                <Label text="Flight Number"/>
+                <TextField fx:id="flightNumberT"/>
+                <Label text="Destination City"/>
+                <TextField fx:id="destCityT"/>
+                <Label text="Arrival Date"/>
+                <TextField fx:id="arrivalT"/>
+                <Label text="Take-Off Location"/>
+                <TextField fx:id="takeOffT"/>
+                <Label text="Number of Seats"/>
+                <TextField fx:id="seatsT"/>
+                <Label text="Plane Type: "/>
+                <TextField fx:id="typeT"/>
+                </VBox>
+                <HBox>
+                    <Button mnemonicParsing="false" onAction="#addFlight" text="Add Flight"/>
+                    <Button mnemonicParsing="false" text="Edit Flight" onAction="#editFlight" />
+                    <Button mnemonicParsing="false" text="Delete" onAction="#deleteFlight"/>
+                </HBox>
+                <Label text="Errors"/>
+                <TextArea fx:id="error"/>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox>
+            <children>
+                <TableView fx:id="tableView">
+                    <columns>
+                        <TableColumn fx:id="flightNumberColumn" text="Flight Number"/>
+                        <TableColumn fx:id="destCityColumn" text="Destination City"/>
+                        <TableColumn fx:id="arrivalDateColumn" text="Arrival Date"/>
+                        <TableColumn fx:id="takeOffLocationColumn" text="Take-Off Location"/>
+                        <TableColumn fx:id="numOfSeatsColumn" text="Number of Seats"/>
+                        <TableColumn fx:id="planeTypeColumn" text="Plane Type"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
